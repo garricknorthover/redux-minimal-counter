@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
-  render() {
+const Line = ({name, colour}) => {
+  return(<div>a line called {name} who is  {colour}</div>)
+}
+
+const App = () => {
+  
     return (
       <div className="App">
         <header className="App-header">
@@ -11,11 +15,12 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
+        <Line name="fred" colour="blue" />
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
       </div>
     );
-  }
+  
 }
 
 export default App;
