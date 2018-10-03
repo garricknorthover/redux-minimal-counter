@@ -9,7 +9,7 @@ background: red;
 `
 export default () => (
   <div>
-    <h1>Tic-Tac-Toe</h1>
+    <h1>Email program</h1>
     <Line>hgjhg</Line>
     <Line other>hgjhg</Line>
   </div>
