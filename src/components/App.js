@@ -7,13 +7,11 @@ ${props => props.other && css`
 background: red;
 `}
 `
-export default function App () {
-  return (
-    <div>
-      <h1>Tic-Tac-Toe</h1>
-      <Line>hgjhg</Line>
-      <Line other>hgjhg</Line>
+export default () => (
+  <div>
+    <h1>Tic-Tac-Toe</h1>
+    <Line>hgjhg</Line>
+    <Line other>hgjhg</Line>
+  </div>
+)
 
-    </div>
-  )
-}
