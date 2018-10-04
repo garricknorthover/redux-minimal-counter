@@ -17,21 +17,28 @@ const items = [
     content: 'is a balloon'
   }
 ]
+const add = e => {
+  e.preventDefault()
+  console.log('clickwd')
+}
 
 const ListItems = ({ ListObject }) =>
-
   ListObject.map(item => (
-
-    <tr key={item.id}>
-      <td>{item.title}</td>
-      <td>{item.content}</td>
-    </tr>
-
+    <table key={item.id}>
+      <tbody>
+        <tr>
+          <td>{item.title}</td>
+          <td>{item.content}</td>
+        </tr>
+      </tbody>
+    </table>
   ))
 
 export default () => (
   <div>
     <h1>List of something</h1>
     <ListItems ListObject={items} />
+    <input name='addItem' />
+    <button onClick={add}>Add</button>
   </div>
 )
