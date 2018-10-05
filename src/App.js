@@ -2,25 +2,24 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { increment, decrement } from './store/actions'
 
-function App (props) {
+function App ({ state, increment, decrement }) {
   return (
     <div>
-      <div>{props.state}</div>
-      <button onClick={props.increment}>+</button>
-      <button onClick={props.decrement}>-</button>
+      <div>{state}</div>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
     </div>
   )
 }
 
-const mapStateToProps = function (state) {
-  return {
-    state: state
+export default connect(
+  function (state) {
+    return {
+      state: state
+    }
+  },
+  {
+    increment: increment,
+    decrement: decrement
   }
-}
-
-const mapDispatchToProps = {
-  increment: increment,
-  decrement: decrement
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+)(App)

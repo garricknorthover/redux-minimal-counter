@@ -1,4 +1,3 @@
-import { INCREMENT, DECREMENT } from './const'
 
 export function increment (payload) {
   return {
