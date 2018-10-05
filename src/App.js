@@ -1,44 +1,26 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { increment, decrement } from './store/actions'
 
-const items = [
-  {
-    id: 1,
-    title: 'the star',
-    content: 'is twunkling in the sky'
-  },
-  {
-    id: 2,
-    title: 'the bear',
-    content: 'is shitting in the woods'
-  },
-  {
-    id: 3,
-    title: 'the moon',
-    content: 'is a balloon'
-  }
-]
-const add = e => {
-  e.preventDefault()
-  console.log('clickwd')
+function App (props) {
+  return (
+    <div>
+      <div>{props.state}</div>
+      <button onClick={props.increment}>+</button>
+      <button onClick={props.decrement}>-</button>
+    </div>
+  )
 }
 
-const ListItems = ({ ListObject }) =>
-  ListObject.map(item => (
-    <table key={item.id}>
-      <tbody>
-        <tr>
-          <td>{item.title}</td>
-          <td>{item.content}</td>
-        </tr>
-      </tbody>
-    </table>
-  ))
+const mapStateToProps = function (state) {
+  return {
+    state: state
+  }
+}
 
-export default () => (
-  <div>
-    <h1>List of something</h1>
-    <ListItems ListObject={items} />
-    <input name='addItem' />
-    <button onClick={add}>Add</button>
-  </div>
-)
+const mapDispatchToProps = {
+  increment: increment,
+  decrement: decrement
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
