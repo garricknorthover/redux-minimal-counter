@@ -3,27 +3,29 @@ import { connect } from 'react-redux'
 import { increment, decrement } from './store/actions'
 import styled from 'styled-components'
 
-const Button = styled.button`
-background-color: papayawhip;
-
-`
-const Circle = styled.div`
-  border-radius: 100px;
-  background-color: papayawhip;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 const App = ({ counter, increment, decrement }) => (
-  <div>
-    <Circle>{counter}</Circle>
-    <Button onClick={increment}>+</Button>
-    <Button onClick={decrement}>-</Button>
-  </div>
+  <Wrapper>
+    <div>Redux Counter</div>
+    <div>{counter}</div>
+    <button onClick={increment}>+</button>
+    <button onClick={decrement}>-</button>
+  </Wrapper>
 )
+
+/**
+ * mapping state and dispatch to props
+ */
 
 export default connect(state => ({ counter: state.counter }), {
   increment,
   decrement
 })(App)
+
+/**
+ * styling stuff
+ */
+const Wrapper = styled.div`
+  font-family: 'Helvetica', sans-serif;
+  font-size:30;
+
+`
