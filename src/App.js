@@ -5,10 +5,10 @@ import styled from 'styled-components'
 
 const App = ({ counter, increment, decrement }) => (
   <Wrapper>
-    <div>Redux Counter</div>
-    <div>{counter}</div>
-    <button onClick={increment}>+</button>
-    <button onClick={decrement}>-</button>
+    <h1>Redux<br />Counter</h1>
+    <Button onClick={increment}>+</Button>
+    <Button onClick={decrement}>-</Button>
+    <Counter>{counter}</Counter>
   </Wrapper>
 )
 
@@ -26,6 +26,20 @@ export default connect(state => ({ counter: state.counter }), {
  */
 const Wrapper = styled.div`
   font-family: 'Helvetica', sans-serif;
-  font-size:30;
+  font-size:30px;
+  padding: 30px;
+  display: flex;
+`
+
+const Button = styled.button`
+  font-size:50px;
+  background-color: transparent;
+  border:0;
+  padding:25px
+`
+const Counter = styled.div`
+  font-size: 70px
+  align-self: center;
+  padding:20px
 
 `
