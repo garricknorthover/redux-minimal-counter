@@ -1,11 +1,11 @@
 import { createStore } from 'redux'
 
-const store = createStore((state = 0, action) => {
+const store = createStore((state = { counter: 0 }, action) => {
   switch (action && action.type) {
     case 'INCREMENT':
-      return state + 1
+      return {...state, counter: state.counter + 1}
     case 'DECREMENT':
-      return state - 1
+      return {...state, counter: state.counter - 1}
     default:
       return state
   }
