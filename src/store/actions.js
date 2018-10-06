@@ -1,14 +1,11 @@
+const increment = payload => ({
+  type: 'INCREMENT',
+  payload
+})
 
-export function increment (payload) {
-  return {
-    type: 'INCREMENT',
-    payload
-  }
-}
+const decrement = payload => ({
+  type: 'DECREMENT',
+  payload
+})
 
-export function decrement (payload) {
-  return {
-    type: 'DECREMENT',
-    payload
-  }
-}
+export { increment, decrement }

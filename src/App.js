@@ -12,14 +12,7 @@ function App ({ state, increment, decrement }) {
   )
 }
 
-export default connect(
-  function (state) {
-    return {
-      state: state
-    }
-  },
-  {
-    increment: increment,
-    decrement: decrement
-  }
-)(App)
+export default connect(state => ({state}) , {
+  increment,
+  decrement
+})(App)

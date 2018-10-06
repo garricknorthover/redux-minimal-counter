@@ -1,5 +1,6 @@
+import { createStore } from 'redux'
 
-function rootReducer (state = 0, action) {
+const store = createStore((state = 0, action) => {
   switch (action && action.type) {
     case 'INCREMENT':
       return state + 1
@@ -8,6 +9,6 @@ function rootReducer (state = 0, action) {
     default:
       return state
   }
-}
+})
 
-export { rootReducer }
+export { store }
